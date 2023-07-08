@@ -13,4 +13,12 @@ export const shazamCoreApi = createApi({
       return headers;
     },
   }),
+  endpoints: (builder) => ({
+    getTopCharts: builder.query({query: () => '/charts/world' }),
+  }),
 });
+
+// "use" from rtk, "GetTopCharts" from endpoints, "Query" from baseQuery
+export const {
+  useGetTopChartsQuery,
+} = shazamCoreApi;
